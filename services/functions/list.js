@@ -6,7 +6,7 @@ export const main = handler(async(event)=>{
         TableName:process.env.TABLE_NAME,
         KeyConditionExpression:"userId=:userId",
         ExpressionAttributeValues:{
-            ":userId": event.requestContext.authorizer.iam.congnitoIdentity.identityId
+            ":userId":event.requestContext.authorizer.iam.congnitoIdentity.identityId
         }
     }
     const result = await dynamodb.query(params)

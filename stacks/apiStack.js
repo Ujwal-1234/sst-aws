@@ -1,9 +1,11 @@
 import {Api, use} from "@serverless-stack/resources";
 import { StorageStack } from "./storageStack";
+
 export function ApiStack({stack, app}){
     const {table} = use(StorageStack);
     const api = new Api(stack, "Api", {
         defaults:{
+            authorizer:"iam",
             function:{
                 permissions:[table],
                 environment:{
