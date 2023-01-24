@@ -4,6 +4,7 @@
   "type": "module",
   "scripts": {},
   "dependencies": {
+    "aws-cdk": "^2.61.1",
     "aws-sdk": "^2.1299.0",
     "uuid": "^9.0.0"
   },

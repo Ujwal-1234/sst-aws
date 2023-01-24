@@ -9,9 +9,9 @@ export const main = handler(async(event)=>{
             userId:"123",
             noteId:event.pathParameters.id
         },
-        UpdateExpression: "SET content =: content, attachment =:attachment",
+        UpdateExpression: "SET content=:content, attachment=:attachment",
         ExpressionAttributeValues:{
-            ":attach":data.attachment||null,
+            ":attachment":data.attachment||null,
             ":content":data.content||null
         },
         ReturnValues:"ALL_NEW"

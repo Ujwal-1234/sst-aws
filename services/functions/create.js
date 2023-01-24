@@ -5,7 +5,7 @@ import dynamodb from "../util/dynamodb"
 
 
 // const dynamoDb = new AWS.DynamoDB.DocumentClient();
-const main = handler (async(event)=>{
+export const main = handler (async(event)=>{
     const data = JSON.parse(event.body)
     const params = {
         TableName: process.env.TABLE_NAME,

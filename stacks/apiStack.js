@@ -15,7 +15,8 @@ export function ApiStack({stack, app}){
             "POST /notes":"functions/create.main", 
             "GET /notes/{id}":"functions/get.main",
             "GET /notes":"functions/list.main",
-            "PUT /notes/{id}":"functions/update.main"
+            "PUT /notes/{id}":"functions/update.main",
+            "DELETE /notes/{id}":"functions/delete.main"
         },
     })
     stack.addOutputs({
