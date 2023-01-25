@@ -3,7 +3,7 @@ import { StorageStack } from "./storageStack";
 
 export function ApiStack({stack, app}){
     const {table} = use(StorageStack);
-    const api = new Api(stack, "Api", {
+    const api = new Api(this, "Api", {
         defaults:{
             authorizer:"iam",
             function:{
@@ -14,6 +14,7 @@ export function ApiStack({stack, app}){
                 }
             }
         },
+        cors:true,
         routes:{
             "POST /notes":"functions/create.main", 
             "GET /notes/{id}":"functions/get.main",
